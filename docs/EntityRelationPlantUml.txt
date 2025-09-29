@@ -1,0 +1,118 @@
+@startuml
+
+entity "User" as User {
+  *Id : int
+  --
+  Email : string
+  Username : string
+  PasswordHash : string
+  Role : enum
+  Status : enum(active/banned)
+  RegistrationDate : datetime
+}
+
+entity "Review" as Review {
+  *Id : int
+  --
+  AuthorId : int
+  CategoryId : int
+  ProductId : int
+  Text : text
+  Rating : int
+  MediaUrls : string[]
+  CreatedAt : datetime
+  UpdatedAt : datetime
+  Likes : int
+  Dislikes : int
+  Status : enum(active/deleted)
+}
+
+entity "Product" as Product {
+  *Id : int
+  --
+  Name : string
+  MediaUrls : string[]
+  Description : text
+  Likes : int
+  Dislikes : int
+  Views : int
+  Rating : float
+  CategoryId : int
+  CreatedAt : datetime
+  ReviewCount : int
+}
+
+entity "Category" as Category {
+  *Id : int
+  --
+  Name : string
+  Description : text
+  ProductsCount : int
+}
+
+entity "Report" as Report {
+  *Id : int
+  --
+  ReviewId : int
+  UserId : int
+  Status : enum(open/closed)
+  Reason : text
+  CreatedAt : datetime
+}
+
+entity "Ban" as Ban {
+  *Id : int
+  --
+  UserId : int
+  ModeratorId : int
+  Reason : text
+  BanStartTime : datetime
+  BanEndTime : datetime
+}
+
+entity "Warning" as Warning {
+  *Id : int
+  --
+  UserId : int
+  ModeratorId : int
+  Reason : text
+  Date : datetime
+}
+
+entity "Statistic" as Statistic {
+  *Id : int
+  --
+  TotalUsers : int
+  TotalReviews : int
+  TotalReports : int
+  ActiveUsers : int
+  Date : datetime
+}
+
+entity "Notification" as Notification {
+  *Id : int
+  --
+  UserId : int
+  Type : enum
+  Message : text
+  IsRead : bool
+  CreatedAt : datetime
+}
+
+
+User ||--o{ Review : "writes"
+User ||--o{ Report : "creates"
+User ||--o{ Ban : "can_be"
+User ||--o{ Warning : "receives"
+User ||--o{ Notification : "receives"
+
+Review }o--|| Product : "about"
+Review }o--|| Category : "in"
+Review ||--o{ Report : "reported_in"
+
+Product }o--|| Category : "belongs_to"
+
+Ban }o--|| User : "issued_by(Moderator)"
+Warning }o--|| User : "issued_by(Moderator)"
+
+@enduml

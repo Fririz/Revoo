@@ -1,0 +1,49 @@
+﻿Add Review
+A user can leave a review for a product/service, including text, rating, photos/videos.
+ • Include: Add text, Add rating.
+ • Extend: Add photo/video.
+ 2. Edit Review
+A user can edit their published review (modify text, photo, or rating).
+ 3. Delete Own Review
+A user can delete only their own review.
+ 4. Like/Dislike Review
+A user can mark another user’s review as helpful or not (like/dislike).
+ 5. Report Review
+A user can report another user’s review (e.g., spam, offensive content).
+ 6. View Reviews
+A user can browse and read reviews.
+ • Extend: Search by parameters.
+ • Extend: Sort by rating/date/popularity.
+
+⸻
+ Guest
+ 1. View Reviews
+Guests can read reviews but cannot post them.
+ 2. Sign Up
+A guest can create a new account (via email/login or social networks).
+ 3. Log In
+A guest can log in to an existing account.
+
+⸻
+
+ Moderator
+ 1. Delete Review
+A moderator can delete any review.
+ 2. Review Reported Review
+A moderator reviews complaints submitted by users about inappropriate reviews.
+ 3. Warn User
+A moderator can send a warning to a user.
+ 4. Ban User
+A moderator can block a user.
+ • Include: Select ban time, Write the reason.
+
+⸻
+
+ Administrator
+ 1. Add Moderator / Delete Moderator
+The administrator manages moderators.
+ 2. View Statistics
+The administrator can view system statistics:
+ • Number of reviews.
+ • Number of complaints.
+ • User activity.

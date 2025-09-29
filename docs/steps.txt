@@ -1,0 +1,17 @@
+1.Formulation of goals and requirements
+2.Use Cases
+3.Extraction of domain entities
+4.Create design of microservices
+5.Defining interactions between services
+6.API design
+7.Database Design
+8.Integration and infrastructure design
+9.Non-functional aspects
+	9.1 Authorization
+	9.2 Loggining
+	9.3 Monitoring
+10.Testing
+	10.1 Unit tests
+	10.2 Integration tests
+	10.3 Load Testing
+11.Documentation

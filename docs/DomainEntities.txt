@@ -18,7 +18,7 @@
 	2.9 UpdatedAt
 	2.10 Likes
 	2.11 Dislikes
-	2.12 Status(active/deleted/reported)
+	2.12 Status(active/deleted)
 3.Product
 	2.1 Id
 	2.2 Name
@@ -35,6 +35,7 @@
 	4.1 Id
 	4.2 Name
 	4.3 Desciption
+	4.4 ProductsCount
 5.Report
 	5.1 Id
 	5.2 ReviewId

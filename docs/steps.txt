@@ -1,5 +1,8 @@
-1.Formulation of goals and requirements
+1.Formulation of goals and requirements:
+	App for creating reviews to products
+	App must be scalability, fault tolerance, security.
 2.Use Cases
+
 3.Extraction of domain entities
 4.Create design of microservices
 5.Defining interactions between services

@@ -1,0 +1,64 @@
+1.User
+	1.1 Id
+	1.2 Email
+	1.3 Username
+	1.4 Password(hash)
+	1.5 role
+	1.6 status(active/banned)
+	1.7 registrationDate
+2.Review
+	2.1 Id
+	2.2 AuthorId
+	2.3 CategoryId
+	2.4 ProductId
+	2.5 Text
+	2.6 Rating
+	2.7 MediaUrls
+	2.8 CreatedAt
+	2.9 UpdatedAt
+	2.10 Likes
+	2.11 Dislikes
+	2.12 Status(active/deleted/reported)
+3.Product
+	2.1 Id
+	2.2 Name
+	2.3 MediaUrls
+	2.4 Desciption
+	2.5 Likes
+	2.6 Dislikes
+	2.7 Views
+	2.8 Rating
+	2.9 CategoryId
+	2.10 CreatedAt
+	2.11 ReviewCount
+4.Category
+	4.1 Id
+	4.2 Name
+	4.3 Desciption
+5.Report
+	5.1 Id
+	5.2 ReviewId
+	5.3 UserId
+	5.4 Status
+	5.5 Reason
+	5.6 Created At
+6.Ban
+	6.1 Id
+	6.2 UserId
+	6.3 ModeratorId
+	6.4 Reason
+	6.5 BanStartTime
+	6.6 BanEndTime
+7.Warning
+	7.1 Id
+	7.2 UserId
+	7.3 ModerationId
+	7.4 Reason
+	7.5 Date
+8.Statistic
+	8.1 TotalUser
+	8.2 TotalReviews
+	8.3 TotalReports
+	8.4 ActiveUsers
+	8.5 Date
+Notification

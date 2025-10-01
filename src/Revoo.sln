@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{33AC0885-78B2-45A2-9652-790BA7E8959A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{F776FE52-3854-4153-A404-F69A2D0FFBB2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserService", "UserService", "{E0A38413-B023-4693-BD53-55E3385F5E00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService.API", "Services\UserService.API\UserService.API.csproj", "{A2B0DD53-411A-4574-A361-A9F34DFE4302}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService.Application", "Services\UserService.Application\UserService.Application.csproj", "{AA425523-F98B-4D34-BE37-AFD7079995E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService.Domain", "Services\UserService.Domain\UserService.Domain.csproj", "{9FE719B1-C7F2-4D21-8646-E3B5AF76FA5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService.Infrastracture", "Services\UserService.Infrastracture\UserService.Infrastracture.csproj", "{DC29C3DC-C6B7-495B-88C1-435575E39092}"
+EndProject
+Global
+	GlobalSection(SolutionConfig=urationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E0A38413-B023-4693-BD53-55E3385F5E00} = {33AC0885-78B2-45A2-9652-790BA7E8959A}
+		{A2B0DD53-411A-4574-A361-A9F34DFE4302} = {E0A38413-B023-4693-BD53-55E3385F5E00}
+		{AA425523-F98B-4D34-BE37-AFD7079995E3} = {E0A38413-B023-4693-BD53-55E3385F5E00}
+		{9FE719B1-C7F2-4D21-8646-E3B5AF76FA5C} = {E0A38413-B023-4693-BD53-55E3385F5E00}
+		{DC29C3DC-C6B7-495B-88C1-435575E39092} = {E0A38413-B023-4693-BD53-55E3385F5E00}
+	EndGlobalSection
+EndGlobal

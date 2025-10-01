@@ -6,13 +6,33 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserService", "UserService", "{E0A38413-B023-4693-BD53-55E3385F5E00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService.API", "Services\UserService.API\UserService.API.csproj", "{A2B0DD53-411A-4574-A361-A9F34DFE4302}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService.API", "Services\UserService\UserService.API\UserService.API.csproj", "{A2B0DD53-411A-4574-A361-A9F34DFE4302}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService.Application", "Services\UserService.Application\UserService.Application.csproj", "{AA425523-F98B-4D34-BE37-AFD7079995E3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService.Application", "Services\UserService\UserService.Application\UserService.Application.csproj", "{AA425523-F98B-4D34-BE37-AFD7079995E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService.Domain", "Services\UserService.Domain\UserService.Domain.csproj", "{9FE719B1-C7F2-4D21-8646-E3B5AF76FA5C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService.Domain", "Services\UserService\UserService.Domain\UserService.Domain.csproj", "{9FE719B1-C7F2-4D21-8646-E3B5AF76FA5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService.Infrastracture", "Services\UserService.Infrastracture\UserService.Infrastracture.csproj", "{DC29C3DC-C6B7-495B-88C1-435575E39092}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService.Infrastructure", "Services\UserService\UserService.Infrastructure\UserService.Infrastructure.csproj", "{DC29C3DC-C6B7-495B-88C1-435575E39092}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReviewService", "ReviewService", "{4E465BAD-430B-4071-82B8-7DB688FE80B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProductService", "ProductService", "{BD603C1E-584C-400B-9DFC-F3DD7C128230}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReviewService.API", "Services\ReviewService\ReviewService.API\ReviewService.API.csproj", "{864EBB05-0D9A-4F0E-8554-519E0BC144C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductService.API", "Services\ProductService\ProductService.API\ProductService.API.csproj", "{63247081-D6C7-4D85-B880-53F1CBAEDE58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReviewService.Domain", "Services\ReviewService\ReviewService.Domain\ReviewService.Domain.csproj", "{5AA942CD-E6F5-4229-A71E-6B6F14B7B23C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReviewService.Infrastructure", "Services\ReviewService\ReviewService.Infrastructure\ReviewService.Infrastructure.csproj", "{3FE66FCD-3D9E-4F29-A3C1-8A70B2E0E79E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReviewService.Application", "Services\ReviewService\ReviewService.Application\ReviewService.Application.csproj", "{1D06147D-A54D-40F8-BD3F-17603B02288C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductService.Application", "Services\ProductService\ProductService.Application\ProductService.Application.csproj", "{CFA43CB2-7181-4E2F-8D68-44F069FCBF2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductService.Domain", "Services\ProductService\ProductService.Domain\ProductService.Domain.csproj", "{2CCAE6B2-92AF-4812-BF2A-EE0B39B31F51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductService.Infrastructure", "Services\ProductService\ProductService.Infrastructure\ProductService.Infrastructure.csproj", "{B8526D54-26B7-410E-8A15-051E1DACCD06}"
 EndProject
 Global
 	GlobalSection(SolutionConfig=urationPlatforms) = preSolution
@@ -27,5 +47,15 @@ Global
 		{AA425523-F98B-4D34-BE37-AFD7079995E3} = {E0A38413-B023-4693-BD53-55E3385F5E00}
 		{9FE719B1-C7F2-4D21-8646-E3B5AF76FA5C} = {E0A38413-B023-4693-BD53-55E3385F5E00}
 		{DC29C3DC-C6B7-495B-88C1-435575E39092} = {E0A38413-B023-4693-BD53-55E3385F5E00}
+		{4E465BAD-430B-4071-82B8-7DB688FE80B6} = {33AC0885-78B2-45A2-9652-790BA7E8959A}
+		{BD603C1E-584C-400B-9DFC-F3DD7C128230} = {33AC0885-78B2-45A2-9652-790BA7E8959A}
+		{864EBB05-0D9A-4F0E-8554-519E0BC144C8} = {4E465BAD-430B-4071-82B8-7DB688FE80B6}
+		{63247081-D6C7-4D85-B880-53F1CBAEDE58} = {BD603C1E-584C-400B-9DFC-F3DD7C128230}
+		{5AA942CD-E6F5-4229-A71E-6B6F14B7B23C} = {4E465BAD-430B-4071-82B8-7DB688FE80B6}
+		{3FE66FCD-3D9E-4F29-A3C1-8A70B2E0E79E} = {4E465BAD-430B-4071-82B8-7DB688FE80B6}
+		{1D06147D-A54D-40F8-BD3F-17603B02288C} = {4E465BAD-430B-4071-82B8-7DB688FE80B6}
+		{CFA43CB2-7181-4E2F-8D68-44F069FCBF2A} = {BD603C1E-584C-400B-9DFC-F3DD7C128230}
+		{2CCAE6B2-92AF-4812-BF2A-EE0B39B31F51} = {BD603C1E-584C-400B-9DFC-F3DD7C128230}
+		{B8526D54-26B7-410E-8A15-051E1DACCD06} = {BD603C1E-584C-400B-9DFC-F3DD7C128230}
 	EndGlobalSection
 EndGlobal

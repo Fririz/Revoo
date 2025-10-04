@@ -5,7 +5,7 @@
 	1.4 Password(hash)
 	1.5 role
 	1.6 status(active/banned)
-	1.7 registrationDate
+	1.7 createdDate
 2.Review
 	2.1 Id
 	2.2 AuthorId

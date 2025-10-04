@@ -3,6 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{33AC0885-78B2-45A2-9652-790BA7E8959A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{F776FE52-3854-4153-A404-F69A2D0FFBB2}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yaml = docker-compose.yaml
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserService", "UserService", "{E0A38413-B023-4693-BD53-55E3385F5E00}"
 EndProject
@@ -33,6 +36,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductService.Domain", "Services\ProductService\ProductService.Domain\ProductService.Domain.csproj", "{2CCAE6B2-92AF-4812-BF2A-EE0B39B31F51}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductService.Infrastructure", "Services\ProductService\ProductService.Infrastructure\ProductService.Infrastructure.csproj", "{B8526D54-26B7-410E-8A15-051E1DACCD06}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DockerCompose", "DockerCompose", "{297B5529-816E-4592-AC79-C2688A9D01E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfig=urationPlatforms) = preSolution

@@ -1,10 +1,11 @@
 using UserService.Domain.Common;
+using UserService.Domain.Enums;
 
 namespace UserService.Domain.Entities;
 
 public class User : EntityBase
 {
-    public User(string email, string username, string passwordHash, string role, bool status)
+    public User(string email, string username, string passwordHash, string role, UserStatus status)
     {
         Email = email;
         Username = username;
@@ -15,9 +16,9 @@ public class User : EntityBase
     public string Email { get; set; } = null!;
     public string Username { get; set; } = null!;
     public string PasswordHash { get; set; } = null!;
-    public string Role { get; set; } = null!; // по умолчанию
-    public bool Status { get; set; } = true!;   // true = active, false = banned
-    
+    public string Role { get; set; } = null!;
+    public UserStatus Status { get; set; }
+
     /*
      * 	1.1 Id
        1.2 Email

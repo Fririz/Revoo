@@ -1,6 +1,6 @@
 using UserService.Domain.Common;
 using UserService.Domain.Entities;
-namespace UserService.Infrastracture.Contracts;
+namespace UserService.Application.Contracts;
 
 public interface IRepositoryBase<T> where T : EntityBase
 {

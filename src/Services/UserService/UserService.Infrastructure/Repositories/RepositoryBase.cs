@@ -7,7 +7,7 @@ namespace UserService.Infrastracture.Repositories;
 
 public class RepositoryBase<T> : IRepositoryBase<T> where T : EntityBase
 {
-    private UserContext _context;
+    protected UserContext _context;
     public RepositoryBase(UserContext context)
     {
         _context = context ?? throw new ArgumentNullException(nameof(context));

@@ -26,42 +26,42 @@ public class CachedRepositoryBase<T> : IRepositoryBase<T> where T : EntityBase
         _serializer = serializer;
     }
 
-    public async Task<T?> GetByIdAsync(Guid id)
+    public async Task<T?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
     {
-        string? cached = await _cache.GetStringAsync(id.ToString());
+        string? cached = await _cache.GetStringAsync(id.ToString(), token: cancellationToken);
         if (!string.IsNullOrEmpty(cached))
         {
             return _serializer.Deserialize<T>(cached);
         }
-        T? value = await _context.GetByIdAsync(id);
+        T? value = await _context.GetByIdAsync(id, cancellationToken);
         
         if (value == null) return null;
-        await _cache.SetStringAsync(id.ToString(), _serializer.Serialize(value));
+        await _cache.SetStringAsync(id.ToString(), _serializer.Serialize(value), token: cancellationToken);
         return value;
     }
 
-    public async Task<IReadOnlyList<T?>> GetAllAsync()
+    public async Task<IReadOnlyList<T?>> GetAllAsync(CancellationToken cancellationToken = default)
     {
-        return await _context.GetAllAsync();
+        return await _context.GetAllAsync(cancellationToken);
     }
 
-    public async Task<T> AddAsync(T entity)
+    public async Task<T> AddAsync(T entity,CancellationToken cancellationToken = default)
     {
-        await _context.AddAsync(entity);
-        await _cache.SetStringAsync(entity.Id.ToString(), _serializer.Serialize(entity));
+        await _context.AddAsync(entity, cancellationToken);
+        await _cache.SetStringAsync(entity.Id.ToString(), _serializer.Serialize(entity), token: cancellationToken);
         return entity;
     }
 
-    public async Task UpdateAsync(T entity)
+    public async Task UpdateAsync(T entity,CancellationToken cancellationToken = default)
     {
-        await _context.DeleteAsync(entity);
-        await _cache.RemoveAsync(entity.Id.ToString());
-        await AddAsync(entity);
+        await _context.DeleteAsync(entity, cancellationToken);
+        await _cache.RemoveAsync(entity.Id.ToString(), cancellationToken);
+        await AddAsync(entity, cancellationToken);
     }
 
-    public async Task DeleteAsync(T entity)
+    public async Task DeleteAsync(T entity,CancellationToken cancellationToken = default)
     {
-        await _context.DeleteAsync(entity);
-        await _cache.RemoveAsync(entity.Id.ToString());
+        await _context.DeleteAsync(entity, cancellationToken);
+        await _cache.RemoveAsync(entity.Id.ToString(), cancellationToken);
     }
 }

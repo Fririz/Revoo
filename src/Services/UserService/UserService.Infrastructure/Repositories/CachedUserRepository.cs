@@ -15,26 +15,26 @@ public class CachedUserRepository : CachedRepositoryBase<User>, IUserRepository
     }
 
 
-    public async Task<User?> GetByNicknameAsync(string username)
+    public async Task<User?> GetByNicknameAsync(string username,CancellationToken cancellationToken = default)
     {
-        string? cachedUser = await _cache.GetStringAsync(username);
+        string? cachedUser = await _cache.GetStringAsync(username, token: cancellationToken);
         if (!string.IsNullOrEmpty(cachedUser))
         {
             return _serializer.Deserialize<User>(cachedUser);
         }
-        User? user = await _context.GetByNicknameAsync(username);
+        User? user = await _context.GetByNicknameAsync(username, cancellationToken);
         if (user == null) return null;
-        await _cache.SetStringAsync(username, _serializer.Serialize(user));
+        await _cache.SetStringAsync(username, _serializer.Serialize(user), token: cancellationToken);
         return user;
     }
 
-    public async Task<IReadOnlyList<User>> GetByRoleAsync(string role)
+    public async Task<IReadOnlyList<User>> GetByRoleAsync(string role,CancellationToken cancellationToken = default)
     {
-       return await _context.GetByRoleAsync(role);
+       return await _context.GetByRoleAsync(role, cancellationToken);
     }
 
-    public async Task<IReadOnlyList<User>> GetByStatusAsync(UserStatus status)
+    public async Task<IReadOnlyList<User>> GetByStatusAsync(UserStatus status,CancellationToken cancellationToken = default)
     {
-        return await _context.GetByStatusAsync(status);
+        return await _context.GetByStatusAsync(status, cancellationToken);
     }
 }

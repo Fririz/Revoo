@@ -1,3 +1,5 @@
+using UserService.Infrastracture;
+
 namespace UserService.API;
 
 public class Program

@@ -1,0 +1,21 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  user.api:
+    build:
+      context: "/Users/fririz/RiderProjects/Revoo/src"
+      dockerfile: "Services/UserService/UserService.API/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net9.0/UserService.API.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "userservice.api:dev"
+    ports: []
+    volumes:
+    - "/Users/fririz/RiderProjects/Revoo/src/Services/UserService/UserService.API:/app:rw"
+    - "/Users/fririz/RiderProjects/Revoo/src:/src:rw"
+    - "/Users/fririz/.nuget/packages:/root/.nuget/packages"
+    working_dir: "/app"

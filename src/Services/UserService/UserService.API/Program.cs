@@ -1,4 +1,5 @@
 using UserService.Infrastracture;
+using Logging;
 using Serilog;
 namespace UserService.API;
 
@@ -10,7 +11,7 @@ public class Program
         
         builder.Host.UseSerilog((context, config) =>
         {
-            config.ReadFrom.Configuration(context.Configuration);
+            SeriLogger.Configure(context, config);
         });
         
         // Add services to the container.
@@ -28,6 +29,7 @@ public class Program
         }
         app.UseAuthorization();
         app.MapControllers();
+        app.UseSerilogRequestLogging();
         Log.Information("Starting User Service");
         app.Run();
     }

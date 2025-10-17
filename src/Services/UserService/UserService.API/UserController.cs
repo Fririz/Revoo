@@ -20,4 +20,9 @@ public class UserController : ControllerBase
         _logger.LogInformation($"called id: {id}");
         return Ok(id);
     }
+    [HttpGet("break")]
+    public IActionResult Break()
+    {
+        throw new Exception("test");
+    }
 }

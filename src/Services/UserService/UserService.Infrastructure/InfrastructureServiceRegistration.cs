@@ -5,7 +5,7 @@ using UserService.Infrastracture.Persistence;
 using UserService.Application.Contracts;
 using UserService.Infrastracture.Repositories;
 using UserService.Infrastracture.Serialization;
-
+using StackExchange.Redis;
 
 namespace UserService.Infrastracture;
 
@@ -15,9 +15,18 @@ public static class InfrastructureServiceRegistration
     {
         services.AddDbContext<UserContext>(options =>
             options.UseNpgsql(configuration.GetConnectionString("UserConnectionString")));
-        services.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
+        services.AddStackExchangeRedisCache(options =>
+        {
+            options.Configuration = configuration.GetConnectionString("Redis");
+
+        });
         services.AddSingleton<ISerializer, JsonSerializerWrapper>();
+        
+        services.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
+        services.Decorate(typeof(IRepositoryBase<>), typeof(CachedRepositoryBase<>));
+
         services.AddScoped<IUserRepository, UserRepository>();
+        //instead of UserRepository we give CachedUserRepository
         services.Decorate<IUserRepository, CachedUserRepository>();
 
         return services;

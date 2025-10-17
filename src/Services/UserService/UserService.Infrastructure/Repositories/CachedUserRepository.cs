@@ -27,6 +27,19 @@ public class CachedUserRepository : CachedRepositoryBase<User>, IUserRepository
         await _cache.SetStringAsync(username, _serializer.Serialize(user), token: cancellationToken);
         return user;
     }
+    public async Task<User?> GetByEmailAsync(string email,CancellationToken cancellationToken = default)
+    {
+        
+        string? cachedUser = await _cache.GetStringAsync(email, token: cancellationToken);
+        if (!string.IsNullOrEmpty(cachedUser))
+        {
+            return _serializer.Deserialize<User>(cachedUser);
+        }
+        User? user = await _context.GetByEmailAsync(email, cancellationToken);
+        if (user == null) return null;
+        await _cache.SetStringAsync(email, _serializer.Serialize(user), token: cancellationToken);
+        return user;
+    }
 
     public async Task<IReadOnlyList<User>> GetByRoleAsync(string role,CancellationToken cancellationToken = default)
     {

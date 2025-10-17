@@ -19,7 +19,7 @@ public class CachedRepositoryBase<T> : IRepositoryBase<T> where T : EntityBase
         _context = context;
         _serializer = serializer;
     }
-
+    //Constructor for other cached repo bcs they have another context
     protected CachedRepositoryBase(IDistributedCache cache, ISerializer serializer)
     {
         _cache = cache;
@@ -54,9 +54,8 @@ public class CachedRepositoryBase<T> : IRepositoryBase<T> where T : EntityBase
 
     public async Task UpdateAsync(T entity,CancellationToken cancellationToken = default)
     {
-        await _context.DeleteAsync(entity, cancellationToken);
+        await _context.UpdateAsync(entity, cancellationToken);
         await _cache.RemoveAsync(entity.Id.ToString(), cancellationToken);
-        await AddAsync(entity, cancellationToken);
     }
 
     public async Task DeleteAsync(T entity,CancellationToken cancellationToken = default)

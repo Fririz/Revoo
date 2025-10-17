@@ -20,6 +20,10 @@ public class UserRepository : RepositoryBase<User>, IUserRepository
         return await _context.Users.Where(u => u.Role == role).ToListAsync(cancellationToken: cancellationToken);
     }
 
+    public async Task<User?> GetByEmailAsync(string email, CancellationToken cancellationToken = default)
+    {
+        return await _context.Users.FirstOrDefaultAsync(u => u.Email == email, cancellationToken: cancellationToken);
+    }
     public async Task<IReadOnlyList<User>> GetByStatusAsync(UserStatus status,CancellationToken cancellationToken = default)
     {
         return await _context.Users.Where(u => u.Status == status).ToListAsync(cancellationToken: cancellationToken);
